@@ -2,8 +2,16 @@
 
 include("connection.php");
 
-$sql = "INSERT INTO messages (name, email, phone, message) VALUES ('John', 'john@example.com',71371723,'hekls ldsa dasjkn askd')";
+// Vairiable
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
+// Query
+$sql = "INSERT INTO messages (name, email, phone, message) VALUES ('{$name}', '{$email}', '{$phone}', '{$message}')";
+
+// Execution
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
 } else {
