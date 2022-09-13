@@ -1,6 +1,15 @@
 <?php
 
+// Add header
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header('Content-Type: application/json');
+
+// Connect to database
 include("connection.php");
+
+// Recieving JSON File
+$_POST = json_decode(file_get_contents('php://input'), true);
 
 // Vairiable
 $name = $_POST['name'];
